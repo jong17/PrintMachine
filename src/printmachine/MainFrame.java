@@ -41,7 +41,7 @@ public class MainFrame extends JFrame{
         cPane.add(mPane);
         cPane.add(shPane);
         cPane.add(stPane);
-        cPane.add(maPane);
+        cPane.add(maPane); // pane test
         
         
         setDefaultCloseOperation(EXIT_ON_CLOSE);
