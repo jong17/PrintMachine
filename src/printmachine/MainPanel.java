@@ -20,7 +20,7 @@ public class MainPanel extends JPanel {
     MainPanel(){
         setLayout(null);
         setPreferredSize(new Dimension((int)MainFrame.width,(int)MainFrame.height));
-        setBounds(0, 0, (int)MainFrame.width, 110*(int)MainFrame.Rh);
+        setBounds(0, 0, (int)MainFrame.width, (int)(110*MainFrame.Rh));
         
         
         

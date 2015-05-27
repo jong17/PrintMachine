@@ -18,10 +18,10 @@ public class MachinePanel extends JPanel {
     private int PosX=100,PosY=560;
     private int width=1720,height=500;
     MachinePanel(){
-        PosX = PosX * (int)MainFrame.Rw;
-        PosY = PosY * (int)MainFrame.Rh;
-        width = width * (int)MainFrame.Rw;
-        height = height * (int)MainFrame.Rh;
+        PosX = (int)(PosX * MainFrame.Rw);
+        PosY = (int)(PosY * MainFrame.Rh);
+        width = (int)(width * MainFrame.Rw);
+        height = (int)(height * MainFrame.Rh);
         setPreferredSize(new Dimension(width,height));
         setBounds(PosX,PosY,width,height);
         repaint();

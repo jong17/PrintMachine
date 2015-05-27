@@ -19,10 +19,10 @@ public class ShirtPanel extends JPanel {
     private int PosX=150,PosY=150;
     private int width=640,height=360;
     ShirtPanel(){
-        PosX = PosX * (int)MainFrame.Rw;
-        PosY = PosY * (int)MainFrame.Rh;
-        width = width * (int)MainFrame.Rw;
-        height = height * (int)MainFrame.Rh;
+        PosX = (int)(PosX * MainFrame.Rw);
+        PosY = (int)(PosY * MainFrame.Rh);
+        width = (int)(width * MainFrame.Rw);
+        height = (int)(height * MainFrame.Rh);
         
         setPreferredSize(new Dimension(width,height));
         setBounds(PosX,PosY,width,height);
