@@ -96,7 +96,7 @@ class subMachinePanel2 extends JComponent{
         }
         @Override
         public void mouseClicked(MouseEvent me) {
-            
+            machineInfo.workingMode = true;
         }
         @Override
         public void mousePressed(MouseEvent me) {
@@ -127,7 +127,7 @@ class subMachinePanel2 extends JComponent{
         }
         @Override
         public void mouseClicked(MouseEvent me) {
-            
+            machineInfo.workingMode = true;
         }
         @Override
         public void mousePressed(MouseEvent me) {
@@ -159,7 +159,10 @@ class subMachinePanel2 extends JComponent{
         }
         @Override
         public void mouseClicked(MouseEvent me) {
-            
+            machineInfo.workingMode = false;
+            ShirtPanel.imagePos = 0;
+            ShirtPanel.t = 0;
+            ShirtPanel.t_old = 0;
         }
         @Override
         public void mousePressed(MouseEvent me) {

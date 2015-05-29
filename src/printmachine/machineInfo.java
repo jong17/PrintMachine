@@ -18,16 +18,24 @@ public class machineInfo {
     static ArrayList<headPrint> headList =new ArrayList<headPrint>();
     static ArrayList<Integer> module = new ArrayList<Integer>();
     
-    static Image headStanby = Toolkit.getDefaultToolkit().createImage(MainFrame.class.getResource("./image/head.png").getPath());
-    static Image headHeat = Toolkit.getDefaultToolkit().createImage(MainFrame.class.getResource("./image/headHeat.png").getPath());
-    static Image headPrint = Toolkit.getDefaultToolkit().createImage(MainFrame.class.getResource("./image/headPrint.png").getPath());
+    static Image headStanby = Toolkit.getDefaultToolkit().createImage("./src/printmachine/image/head.png");
+    static Image headHeat =  Toolkit.getDefaultToolkit().createImage("./src/printmachine/image/headHeat.png");
+    static Image headPrint =  Toolkit.getDefaultToolkit().createImage("./src/printmachine/image/headPrint.png");
     
-    static Image startButton1 = Toolkit.getDefaultToolkit().createImage(MainFrame.class.getResource("./image/start1.png").getPath());
-    static Image startButton2 = Toolkit.getDefaultToolkit().createImage(MainFrame.class.getResource("./image/start2.png").getPath());
-    static Image stopButton1 = Toolkit.getDefaultToolkit().createImage(MainFrame.class.getResource("./image/stop1.png").getPath());
-    static Image stopButton2  = Toolkit.getDefaultToolkit().createImage(MainFrame.class.getResource("./image/stop2.png").getPath());
-    static Image skipButton1 = Toolkit.getDefaultToolkit().createImage(MainFrame.class.getResource("./image/skip1.png").getPath());
-    static Image skipButton2 = Toolkit.getDefaultToolkit().createImage(MainFrame.class.getResource("./image/skip2.png").getPath());
+    static Image startButton1 = Toolkit.getDefaultToolkit().createImage("./src/printmachine/image/start1.png");
+    static Image startButton2 = Toolkit.getDefaultToolkit().createImage("./src/printmachine/image/start2.png");
+    
+    static Image stopButton1 = Toolkit.getDefaultToolkit().createImage("./src/printmachine/image/stop1.png");
+    static Image stopButton2  = Toolkit.getDefaultToolkit().createImage("./src/printmachine/image/stop2.png");
+    static Image skipButton1 = Toolkit.getDefaultToolkit().createImage("./src/printmachine/image/skip1.png");
+    static Image skipButton2 = Toolkit.getDefaultToolkit().createImage("./src/printmachine/image/skip2.png");
+    
+    static Image shirtScreenImage =Toolkit.getDefaultToolkit().createImage("./src/printmachine/image/shirtScreen.png");
+    static Image shirtImage = Toolkit.getDefaultToolkit().createImage("./src/printmachine/image/shirt.png");
+    
+    static boolean workingMode = false;
+    
+    static double tpp=1000; //เวลาที่ใช้ผลิตเสื้อ 1 ตัว
     
     machineInfo(){
         
