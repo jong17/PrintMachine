@@ -14,7 +14,7 @@ import javax.swing.JPanel;
  *
  * @author alfarie
  */
-public class StatusPanel extends JPanel{
+public class StatusPanel extends JPanel implements Runnable{
     private int PosX=890,PosY=150;
     private int width=880,height=360;
     StatusPanel(){
@@ -24,11 +24,28 @@ public class StatusPanel extends JPanel{
         height = (int)(height * MainFrame.Rh);
         setPreferredSize(new Dimension(width,height));
         setBounds(PosX,PosY,width,height);
+        new Thread(this).start();
     }
+    
+    
     
     @Override
     public void paint(Graphics g){
         g.setColor(Color.white);
         g.fillRect(0, 0, width, height);
+    }
+
+    @Override
+    public void run() {
+        while(true){
+            repaint();
+            try{
+                Thread.sleep(100);
+                
+            }
+            catch(Exception e){
+                
+            }
+        }
     }
 }

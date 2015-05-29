@@ -9,6 +9,8 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
@@ -16,23 +18,13 @@ import javax.swing.JPanel;
  *
  * @author alfarie
  */
-public class MainPanel extends JPanel {
+public class MainPanel extends JPanel{
     MainPanel(){
         setLayout(null);
         setPreferredSize(new Dimension((int)MainFrame.width,(int)MainFrame.height));
         setBounds(0, 0, (int)MainFrame.width, (int)(110*MainFrame.Rh));
         
-        
-        
-        
-        ShirtPanel shPane = new ShirtPanel();
-        add(shPane);
     }
-    
-    @Override
-    public void paint(Graphics g){
-        g.setColor(Color.white);
-        g.fillRect(0, 0, (int) MainFrame.width, 110);
-    }
+     
     
 }

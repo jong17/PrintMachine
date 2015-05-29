@@ -47,9 +47,7 @@ public class MachinePanel extends JPanel  {
         height = (int)(height * MainFrame.Rh);
         
         setBounds(PosX,PosY,width,height);
-        
-        
-        
+         
         add(new subMachinePanel1());
         add(new subMachinePanel2());
         setbg();

@@ -8,6 +8,7 @@ package printmachine;
 import java.awt.Container;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 /**
  *
@@ -20,9 +21,8 @@ public class PrintMachine {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        
         MainFrame frame = new MainFrame();
-        
+        new simState();
     }
-    
 }
+

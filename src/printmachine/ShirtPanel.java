@@ -30,11 +30,16 @@ public class ShirtPanel extends JPanel implements Runnable{
         PosY = (int)(PosY * MainFrame.Rh);
         width = (int)(width * MainFrame.Rw);
         height = (int)(height * MainFrame.Rh);
-        shirtImageURL = ShirtPanel.class.getResource("../shirtImage/shirtScreen.png").getPath();
+        setPreferredSize(new Dimension(width,height));
+        setBounds(PosX,PosY,width,height);
+        /*shirtImageURL = ShirtPanel.class.getResource("../shirtImage/shirtScreen.png").getPath();
         shirtImage = Toolkit.getDefaultToolkit().getImage(shirtImageURL);
         setPreferredSize(new Dimension(width,height));
         setBounds(PosX,PosY,width,height);
-        //try{ new Thread(this).start();}catch(Exception e){}
+       try{ new Thread(this).start();}catch(Exception e){}*/
+        repaint();
+        new Thread(this).start();
+        
         
     }
      
@@ -42,17 +47,17 @@ public class ShirtPanel extends JPanel implements Runnable{
     public void paint(Graphics gr){
         gr.setColor(Color.white);
         gr.fillRect(0, 0, width, height);
-        gr.drawImage(shirtImage, (width/2)-shirtImage.getWidth(this)/2, 0, (width/2)+shirtImage.getWidth(this)/2, height, 0, 0+imagePos, 305, 278+imagePos, this);
+       /* gr.drawImage(shirtImage, (width/2)-shirtImage.getWidth(this)/2, 0, (width/2)+shirtImage.getWidth(this)/2, height, 0, 0+imagePos, 305, 278+imagePos, this);
         imagePos+=278;
-        if(imagePos>=1668) imagePos=0;
+        if(imagePos>=1668) imagePos=0;*/
         gr.dispose();
     }
 
     @Override
     public void run() {
-        /*while(true){
+        while(true){
             repaint();
-            try{ Thread.sleep(1000);}catch(Exception e){System.out.println(e.getStackTrace());}
-        }*/
+            try{ Thread.sleep(100);}catch(Exception e){System.out.println(e.getStackTrace());}
+        }
     }
 }

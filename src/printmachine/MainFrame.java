@@ -7,9 +7,16 @@ package printmachine;
 
 import java.awt.Container;
 import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 /**
  *
@@ -22,6 +29,7 @@ public class MainFrame extends JFrame{
     final static int w = 1920;
     final static int h = 1080;
     static double Rw,Rh;
+    Image background;
     // constuctor
     MainFrame(){
         Container cPane = getContentPane();
@@ -31,7 +39,6 @@ public class MainFrame extends JFrame{
         height = screenSize.getHeight();
         Rw = width /w ;
         Rh = height / h;
-        
         
         
         MainPanel mPane = new MainPanel();
@@ -44,12 +51,20 @@ public class MainFrame extends JFrame{
         cPane.add(maPane); // pane test aaaa
         
         
+        
+        
+        
+        //simState s = new simState();
+        //s.st();
+        
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setExtendedState(JFrame.MAXIMIZED_BOTH);
-        //setSize(1000,1000);
+        //setSize((int)width ,(int)height);
         setUndecorated(true);
         setVisible(true);
     }
-    
-    
+   
+   
 }
+
+
