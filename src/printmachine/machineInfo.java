@@ -22,8 +22,8 @@ public class machineInfo {
     static Image headHeat = Toolkit.getDefaultToolkit().createImage(MainFrame.class.getResource("../src/headHeat.png").getPath());
     static Image headPrint = Toolkit.getDefaultToolkit().createImage(MainFrame.class.getResource("../src/headPrint.png").getPath());
     
-    static Image startButton1 = Toolkit.getDefaultToolkit().createImage(MainFrame.class.getResource("../src/start1.png").getPath());
-    static Image startButton2 = Toolkit.getDefaultToolkit().createImage(MainFrame.class.getResource("../src/start2.png").getPath());
+    static Image startButton1 = Toolkit.getDefaultToolkit().createImage(MainFrame.class.getResource("../src/startv2-1.png").getPath());
+    static Image startButton2 = Toolkit.getDefaultToolkit().createImage(MainFrame.class.getResource("../src/startv2-2.png").getPath());
     static Image stopButton1 = Toolkit.getDefaultToolkit().createImage(MainFrame.class.getResource("../src/stop1.png").getPath());
     static Image stopButton2  = Toolkit.getDefaultToolkit().createImage(MainFrame.class.getResource("../src/stop2.png").getPath());
     static Image skipButton1 = Toolkit.getDefaultToolkit().createImage(MainFrame.class.getResource("../src/skip1.png").getPath());
