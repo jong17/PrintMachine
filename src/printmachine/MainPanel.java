@@ -23,7 +23,7 @@ public class MainPanel extends JPanel{
         setLayout(null);
         setPreferredSize(new Dimension((int)MainFrame.width,(int)MainFrame.height));
         setBounds(0, 0, (int)MainFrame.width, (int)(110*MainFrame.Rh));
-        
+        int number = 5;
     }
      
     
