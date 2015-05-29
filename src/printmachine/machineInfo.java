@@ -18,16 +18,16 @@ public class machineInfo {
     static ArrayList<headPrint> headList =new ArrayList<headPrint>();
     static ArrayList<Integer> module = new ArrayList<Integer>();
     
-    static Image headStanby = Toolkit.getDefaultToolkit().createImage(MainFrame.class.getResource("../src/head.png").getPath());
-    static Image headHeat = Toolkit.getDefaultToolkit().createImage(MainFrame.class.getResource("../src/headHeat.png").getPath());
-    static Image headPrint = Toolkit.getDefaultToolkit().createImage(MainFrame.class.getResource("../src/headPrint.png").getPath());
+    static Image headStanby = Toolkit.getDefaultToolkit().createImage(MainFrame.class.getResource("./image/head.png").getPath());
+    static Image headHeat = Toolkit.getDefaultToolkit().createImage(MainFrame.class.getResource("./image/headHeat.png").getPath());
+    static Image headPrint = Toolkit.getDefaultToolkit().createImage(MainFrame.class.getResource("./image/headPrint.png").getPath());
     
-    static Image startButton1 = Toolkit.getDefaultToolkit().createImage(MainFrame.class.getResource("../src/start1.png").getPath());
-    static Image startButton2 = Toolkit.getDefaultToolkit().createImage(MainFrame.class.getResource("../src/start2.png").getPath());
-    static Image stopButton1 = Toolkit.getDefaultToolkit().createImage(MainFrame.class.getResource("../src/stop1.png").getPath());
-    static Image stopButton2  = Toolkit.getDefaultToolkit().createImage(MainFrame.class.getResource("../src/stop2.png").getPath());
-    static Image skipButton1 = Toolkit.getDefaultToolkit().createImage(MainFrame.class.getResource("../src/skip1.png").getPath());
-    static Image skipButton2 = Toolkit.getDefaultToolkit().createImage(MainFrame.class.getResource("../src/skip2.png").getPath());
+    static Image startButton1 = Toolkit.getDefaultToolkit().createImage(MainFrame.class.getResource("./image/start1.png").getPath());
+    static Image startButton2 = Toolkit.getDefaultToolkit().createImage(MainFrame.class.getResource("./image/start2.png").getPath());
+    static Image stopButton1 = Toolkit.getDefaultToolkit().createImage(MainFrame.class.getResource("./image/stop1.png").getPath());
+    static Image stopButton2  = Toolkit.getDefaultToolkit().createImage(MainFrame.class.getResource("./image/stop2.png").getPath());
+    static Image skipButton1 = Toolkit.getDefaultToolkit().createImage(MainFrame.class.getResource("./image/skip1.png").getPath());
+    static Image skipButton2 = Toolkit.getDefaultToolkit().createImage(MainFrame.class.getResource("./image/skip2.png").getPath());
     
     machineInfo(){
         
