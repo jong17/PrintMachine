@@ -39,7 +39,6 @@ public class MachinePanel extends JPanel  {
      module m2 = new module();
     
     MachinePanel(){
-        
         setLayout(null);
         PosX = (int)(PosX * MainFrame.Rw);
         PosY = (int)(PosY * MainFrame.Rh);
@@ -47,16 +46,15 @@ public class MachinePanel extends JPanel  {
         height = (int)(height * MainFrame.Rh);
         
         setBounds(PosX,PosY,width,height);
-         
+        
         add(new subMachinePanel1());
         add(new subMachinePanel2());
         setbg();
         
-        
-        
     }
     private void setbg(){
         bg = Toolkit.getDefaultToolkit().createImage(MainFrame.class.getResource("../src/bgMachine.png").getPath());
+        bg = bg.getScaledInstance(width, height, Image.SCALE_SMOOTH);
         JLabel l = new JLabel();
         ImageIcon icon = new ImageIcon(bg); 
         l.setIcon(icon);
@@ -121,6 +119,7 @@ class subMachinePanel2 extends JComponent{
         public skipButton(int X, int Y) {
             super( X, Y);
             machineInfo.skipButton1 = machineInfo.skipButton1.getScaledInstance((int)(200*MainFrame.Rw), (int)(200*MainFrame.Rh),  Image.SCALE_SMOOTH);
+            machineInfo.skipButton2 = machineInfo.skipButton2.getScaledInstance((int)(200*MainFrame.Rw), (int)(200*MainFrame.Rh),  Image.SCALE_SMOOTH);
             dIm = new ImageIcon(machineInfo.skipButton1);
             cIm = new ImageIcon(machineInfo.skipButton2);
             setIcon(dIm);
@@ -152,6 +151,7 @@ class subMachinePanel2 extends JComponent{
         public stopButton(int X, int Y) {
             super( X, Y);
             machineInfo.stopButton1 = machineInfo.stopButton1.getScaledInstance((int)(200*MainFrame.Rw), (int)(200*MainFrame.Rh),  Image.SCALE_SMOOTH);
+            machineInfo.stopButton2 = machineInfo.stopButton2.getScaledInstance((int)(200*MainFrame.Rw), (int)(200*MainFrame.Rh),  Image.SCALE_SMOOTH);
             dIm = new ImageIcon(machineInfo.stopButton1);
             cIm = new ImageIcon(machineInfo.stopButton2);
             setIcon(dIm);
