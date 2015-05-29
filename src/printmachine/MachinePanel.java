@@ -29,7 +29,7 @@ import javax.swing.JPanel;
  * @author alfarie
  */
 public class MachinePanel extends JPanel  {
-    private int PosX=100,PosY=560;
+    private int PosX=100,PosY=550;
     private int width=1720,height=500;
     int i = 0;
     Image bg;
@@ -69,8 +69,6 @@ class subMachinePanel2 extends JComponent{
     private int PosX=0,PosY=300;
     private int width=1720,height=200;
     subButton start,skip,stop;
-   
-    
     subMachinePanel2(){
         setLayout(null);
         PosX = (int)(PosX * MainFrame.Rw);
@@ -185,7 +183,7 @@ class subMachinePanel2 extends JComponent{
 
 
 class subMachinePanel1 extends JComponent implements Runnable{
-     private int PosX=0,PosY=100;
+     private int PosX=0,PosY=0;
      private int width=1720,height=250;
      
     subMachinePanel1(){
