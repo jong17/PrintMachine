@@ -14,11 +14,14 @@ import javax.swing.JLabel;
 public class headPrint {
     private Image head;
     private int state;  // 0 = standby , 1 = print,  2 = heat;
-    final static int width = 70,height= 210;
+    final static int width = 70,height= 160;
     private JLabel heat,stand,print;
     headPrint(){
          state = 0;
          heat = new JLabel();
+         machineInfo.headHeat =machineInfo.headHeat.getScaledInstance((int)(width*MainFrame.Rw), (int)(height*MainFrame.Rh), Image.SCALE_FAST);
+         machineInfo.headStanby =machineInfo.headStanby.getScaledInstance((int)(width*MainFrame.Rw), (int)(height*MainFrame.Rh), Image.SCALE_FAST);
+         machineInfo.headPrint =machineInfo.headPrint.getScaledInstance((int)(width*MainFrame.Rw), (int)(height*MainFrame.Rh), Image.SCALE_FAST);
          ImageIcon h = new ImageIcon(machineInfo.headHeat); 
 	 heat.setIcon(h);
          
