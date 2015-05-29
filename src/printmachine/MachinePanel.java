@@ -91,6 +91,8 @@ class subMachinePanel2 extends JComponent{
     class startButton extends subButton implements MouseListener {
         public startButton(int X, int Y) {
             super( X, Y);
+            machineInfo.startButton1 = machineInfo.startButton1.getScaledInstance((int)(200*MainFrame.Rw), (int)(200*MainFrame.Rh),  Image.SCALE_SMOOTH);
+            machineInfo.startButton2 = machineInfo.startButton2.getScaledInstance((int)(200*MainFrame.Rw), (int)(200*MainFrame.Rh),  Image.SCALE_SMOOTH);
             dIm = new ImageIcon(machineInfo.startButton1);
             cIm = new ImageIcon(machineInfo.startButton2);
             setIcon(dIm);
@@ -120,6 +122,7 @@ class subMachinePanel2 extends JComponent{
     class skipButton extends subButton implements MouseListener {
         public skipButton(int X, int Y) {
             super( X, Y);
+            machineInfo.skipButton1 = machineInfo.skipButton1.getScaledInstance((int)(200*MainFrame.Rw), (int)(200*MainFrame.Rh),  Image.SCALE_SMOOTH);
             dIm = new ImageIcon(machineInfo.skipButton1);
             cIm = new ImageIcon(machineInfo.skipButton2);
             setIcon(dIm);
@@ -150,6 +153,7 @@ class subMachinePanel2 extends JComponent{
     class stopButton extends subButton implements MouseListener {
         public stopButton(int X, int Y) {
             super( X, Y);
+            machineInfo.stopButton1 = machineInfo.stopButton1.getScaledInstance((int)(200*MainFrame.Rw), (int)(200*MainFrame.Rh),  Image.SCALE_SMOOTH);
             dIm = new ImageIcon(machineInfo.stopButton1);
             cIm = new ImageIcon(machineInfo.stopButton2);
             setIcon(dIm);
@@ -244,6 +248,7 @@ class subButton extends JLabel{
         PosY = (int)(Y * MainFrame.Rh);
         width = (int)(width * MainFrame.Rw);
         height = (int)(height * MainFrame.Rh);
+        
         setBounds(PosX,PosY,width,height);
     }
 }
