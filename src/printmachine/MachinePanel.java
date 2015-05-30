@@ -81,6 +81,7 @@ class subMachinePanel2 extends JComponent{
         add(start);
         add(skip);
         add(stop);
+        int number = 5;
         //new Thread(this).start();
     }
     
