@@ -33,6 +33,8 @@ public class machineInfo {
     static Image shirtScreenImage =Toolkit.getDefaultToolkit().createImage("./src/printmachine/image/shirtScreen.png");
     static Image shirtImage = Toolkit.getDefaultToolkit().createImage("./src/printmachine/image/shirt.png");
     
+    static Image background = Toolkit.getDefaultToolkit().createImage("./src/printmachine/image/bg.png");
+    
     static boolean workingMode = false;
     
     static double tpp=1000; //เวลาที่ใช้ผลิตเสื้อ 1 ตัว
