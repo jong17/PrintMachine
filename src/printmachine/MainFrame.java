@@ -17,12 +17,10 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-
 /**
  *
  * @author alfarie
  */
-
 public class MainFrame extends JFrame{
     final Dimension screenSize;
     public static double width,height;
@@ -30,7 +28,9 @@ public class MainFrame extends JFrame{
     final static int h = 1080;
     static double Rw,Rh;
     Image background;
-    // constuctor
+    MainPanel mPane;
+    autoPanel auPane;
+    
     MainFrame(){
         Container cPane = getContentPane();
         cPane.setLayout(null);
@@ -40,31 +40,36 @@ public class MainFrame extends JFrame{
         Rw = width /w ;
         Rh = height / h;
         
+        mPane = new MainPanel(this);
+        auPane = new autoPanel();
         
-        MainPanel mPane = new MainPanel();
-        ShirtPanel shPane = new ShirtPanel();
-        StatusPanel stPane = new StatusPanel();
-        MachinePanel maPane = new MachinePanel();
-        cPane.add(mPane);
-        cPane.add(shPane);
-        cPane.add(stPane);
-        cPane.add(maPane); // pane test aaaa
+        add(mPane);
+        add(auPane);
+        setbg();
         
-        
-        
-        
-        
-        //simState s = new simState();
-        //s.st();
         
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setExtendedState(JFrame.MAXIMIZED_BOTH);
-        //setSize((int)width ,(int)height);
+        
         setUndecorated(true);
         setVisible(true);
     }
-   
-   
+    
+    private void setbg(){
+        background = Toolkit.getDefaultToolkit().createImage("./src/printmachine/image/bg.png");
+        background = background.getScaledInstance((int)(w*Rw), (int)(h*Rh), Image.SCALE_SMOOTH);
+        JLabel l = new JLabel();
+        ImageIcon icon = new ImageIcon(background); 
+        l.setIcon(icon);
+        l.setBounds(0, 0, (int)(w*Rw) , (int)(h*Rh));
+        add(l);
+    }
+    public void setAll(){
+        auPane.setVisible(true);
+    }
+    public void rmAll(){
+        auPane.setVisible(false);
+    }
 }
 
 

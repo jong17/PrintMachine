@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package printmachine.image;
+package printmachine;
 
 /**
  *
  * @author alfarie
  */
-public class set {
+class auPane {
     
 }

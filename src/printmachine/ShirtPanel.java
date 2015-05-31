@@ -15,13 +15,12 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.Timer;
-
 /**
  *
  * @author alfarie
  */
 public class ShirtPanel extends JPanel implements Runnable{
-    private int PosX=150,PosY=150;
+    private int PosX=150,PosY=20;
     private int width=640,height=360;
     //private long frameRate = 500;
     public static int imagePos=0;
@@ -81,11 +80,12 @@ public class ShirtPanel extends JPanel implements Runnable{
         g.drawImage(shirtImage,(width/2)-shirtImage.getWidth(this)/2, 0, shirtImage.getWidth(this),height, this);
     }*/
     
-    private void drawShirtScreen(Graphics g){
+   private void drawShirtScreen(Graphics g){
         g.drawImage(machineInfo.shirtScreenImage, (int)(((width/2)-machineInfo.shirtScreenImage.getWidth(this)/2)*MainFrame.Rw), 0, (int)((width/2)+machineInfo.shirtScreenImage.getWidth(this)/2), height, 0, 0+imagePos, 305, 278+imagePos, this);
         t_new = System.currentTimeMillis();
-        t += t_new - t_old;
-        if(t>=machineInfo.tpp){  
+        if(t_old!=0)
+            t += t_new - t_old;
+        if(t>=(machineInfo.setSuccesShirtScreen()/machineInfo.numberShirtPicture)){  
             if(t_old==0) t=0;
             else{
                 imagePos+=278;
