@@ -34,10 +34,26 @@ public class machineInfo {
     static Image shirtImage = Toolkit.getDefaultToolkit().createImage("./src/printmachine/image/shirt.png");
     
     static Image background = Toolkit.getDefaultToolkit().createImage("./src/printmachine/image/bg.png");
+    static Image infoButton1 = Toolkit.getDefaultToolkit().createImage("./src/printmachine/image/info1.png");
+    static Image infoButton2 = Toolkit.getDefaultToolkit().createImage("./src/printmachine/image/info2.png");
+    
+    static Image autoButton1 = Toolkit.getDefaultToolkit().createImage("./src/printmachine/image/automatic1.png");
+    static Image autoButton2 = Toolkit.getDefaultToolkit().createImage("./src/printmachine/image/automatic2.png");
+    
+    static Image settingButton1 = Toolkit.getDefaultToolkit().createImage("./src/printmachine/image/setting1.png");
+    static Image settingButton2 = Toolkit.getDefaultToolkit().createImage("./src/printmachine/image/setting2.png");
     
     static boolean workingMode = false;
     
-    static double tpp=1000; //เวลาที่ใช้ผลิตเสื้อ 1 ตัว
+    static double totalWorkingTime;
+    static double lastHeadScreentTime=500;
+    static double latencyTime=2000;
+    static double tpp;
+    static int numHead=2;
+    static int numShirt=10;
+    static int numberShirtPicture = 6;
+    
+    static TimeCounter timer; //คลาสนับเวลา
     
     machineInfo(){
         
@@ -78,5 +94,48 @@ public class machineInfo {
                 break;
         }      
     }
+    public static void setTimer(){
+        setSuccesShirtScreen();
+        setTotalWorkingTime();
+        timer = new TimeCounter();
+    }
     
+    public static String printTime(int mode){
+        
+        if(mode==0){
+            String hh = Long.toString(timer.rh);
+            String mm = Long.toString(timer.rm);
+            String ss = Long.toString(timer.rs);
+            if(timer.rh<10) hh="0"+Long.toString(timer.rh);
+            if(timer.rm<10) mm="0"+Long.toString(timer.rm);
+            if(timer.rs<10) ss="0"+Long.toString(timer.rs);
+            //if(timeCounter==0) return hh+":"+mm+":"+ss;
+            if(timer.t<500) return hh+":"+mm+":"+ss;
+            else return hh+" "+mm+" "+ss;
+        }
+        else{
+            String hh = Long.toString(timer.h);
+            String mm = Long.toString(timer.m);
+            String ss = Long.toString(timer.s);
+            if(timer.h<10) hh="0"+Long.toString(timer.h);
+            if(timer.m<10) mm="0"+Long.toString(timer.m);
+            if(timer.s<10) ss="0"+Long.toString(timer.s);
+            if(timer.t<500) return hh+":"+mm+":"+ss;
+            else return hh+" "+mm+" "+ss;
+        }
+            
+    }
+    public static double setSuccesShirtScreen(){
+        if(StatusPanel.countShirt==0)
+            return tpp = lastHeadScreentTime*numHead+latencyTime;
+        else
+            return tpp = latencyTime+lastHeadScreentTime;
+        
+    }
+    
+    public static void setTotalWorkingTime(){
+        totalWorkingTime = (tpp+numShirt*(latencyTime+lastHeadScreentTime))/1000;
+    }
 }
+    
+

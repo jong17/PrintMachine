@@ -16,7 +16,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -28,8 +31,9 @@ import javax.swing.JPanel;
  * null layout setting
  * @author alfarie
  */
+
 public class MachinePanel extends JPanel  {
-    private int PosX=100,PosY=550;
+    private int PosX=100,PosY=420;
     private int width=1720,height=500;
     int i = 0;
     Image bg;
@@ -53,8 +57,7 @@ public class MachinePanel extends JPanel  {
         
     }
     private void setbg(){
-        bg = Toolkit.getDefaultToolkit().createImage(MainFrame.class.getResource("../src/bgMachine.png").getPath());
-        bg = bg.getScaledInstance(width, height, Image.SCALE_SMOOTH);
+        bg = Toolkit.getDefaultToolkit().createImage("./src/printmachine/image/bgMachine.png");
         JLabel l = new JLabel();
         ImageIcon icon = new ImageIcon(bg); 
         l.setIcon(icon);
@@ -74,20 +77,21 @@ class subMachinePanel2 extends JComponent{
         width = (int)(width * MainFrame.Rw);
         height = (int)(height * MainFrame.Rh);
         setBounds(PosX,PosY,width,height);
-        
-        start = new startButton(0,0);
+        JavaToArduino com = new JavaToArduino();
+        start = new startButton(0,0,com);
         skip = new skipButton(750,0);
         stop = new stopButton(1520,0);
         add(start);
         add(skip);
         add(stop);
-        int number =4;
         //new Thread(this).start();
     }
     
     class startButton extends subButton implements MouseListener {
-        public startButton(int X, int Y) {
+        JavaToArduino control;
+        public startButton(int X, int Y,JavaToArduino c) {
             super( X, Y);
+            control = c;
             machineInfo.startButton1 = machineInfo.startButton1.getScaledInstance((int)(200*MainFrame.Rw), (int)(200*MainFrame.Rh),  Image.SCALE_SMOOTH);
             machineInfo.startButton2 = machineInfo.startButton2.getScaledInstance((int)(200*MainFrame.Rw), (int)(200*MainFrame.Rh),  Image.SCALE_SMOOTH);
             dIm = new ImageIcon(machineInfo.startButton1);
@@ -98,6 +102,17 @@ class subMachinePanel2 extends JComponent{
         @Override
         public void mouseClicked(MouseEvent me) {
             machineInfo.workingMode = true;
+            machineInfo.setSuccesShirtScreen();
+            machineInfo.setTotalWorkingTime();
+            machineInfo.timer = new TimeCounter();
+            try{ machineInfo.timer.start();}catch(Exception e){}
+            byte  a = 88;
+            byte b = 2;
+            byte c = 1;
+            byte[] d = {a,b,c};
+            System.out.println(d);
+            try{control.getSender().write(d);}
+            catch(Exception e){}
         }
         @Override
         public void mousePressed(MouseEvent me) {
@@ -223,7 +238,6 @@ class subMachinePanel1 extends JComponent implements Runnable{
                         add(machineInfo.headList.get(j++).getComponent());
                         addGap();
                     }
-                    
                 }
                 validate();
                 Thread.sleep(50);
@@ -245,12 +259,11 @@ class subButton extends JLabel{
      private int width=200,height=200;
      ImageIcon dIm,cIm;
     subButton(int X,int Y){
-        super("staasdf");
+        
         PosX = (int)(X * MainFrame.Rw);
         PosY = (int)(Y * MainFrame.Rh);
         width = (int)(width * MainFrame.Rw);
         height = (int)(height * MainFrame.Rh);
-        
         setBounds(PosX,PosY,width,height);
     }
 }
